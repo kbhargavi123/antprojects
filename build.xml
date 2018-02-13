@@ -1,4 +1,4 @@
-<project default="run" name="create jar">
+<project default="jar" name="create jar">
 <target name="create">
      <delete dir="./dist"/>
      <mkdir dir="./dist"/>
@@ -16,9 +16,12 @@
 <javac includeantruntime="false" srcdir="." destdir="./dist"/>
 </target>
 
-<target name="jar">
+<target name="jar" depends="run">
 <jar destfile="./lib/helloworld.jar" basedir="./dist"/>
 </target>
+
+
+
 
 
 
